@@ -1,0 +1,7 @@
+[2022-09-14 17:16:56,506 INFO] {'BOS': 0, 'EOS': 50264, 'PAD': 1, 'EOQ': 2}
+[2022-09-14 17:16:56,510 WARNING] paddle.fluid.layers.py_reader() may be deprecated in the near future. Please use paddle.fluid.io.DataLoader.from_generator() instead.
+[2022-09-14 17:16:57,848 INFO] args.is_distributed: False
+[2022-09-14 17:16:59,608 INFO] Loading dataset from ./data/examples_dataset/test/test.0.json, number of examples: 98
+[2022-09-14 17:16:59,608 INFO] Final test result:
+[2022-09-14 17:16:59,740 INFO] {'BOS': 0, 'EOS': 50264, 'PAD': 1, 'EOQ': 2}
+[2022-09-14 17:17:15,356 INFO] candidata path: ./roberta_results//test_final_preds.candidate
