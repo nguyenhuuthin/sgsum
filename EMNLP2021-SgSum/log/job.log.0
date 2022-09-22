@@ -1,0 +1,210 @@
+-----------  Configuration Arguments -----------
+batch_size: 3000
+beam_size: 5
+beta1: 0.9
+beta2: 0.998
+block_trigram: False
+candidate_sentence_num: 10
+candidate_summary_num: 10
+checkpoints: ./model_checkpoints
+config_path: ./model_config/roberta_graphsum_config.json
+decode_path: ./roberta_results
+decr_every_n_nan_or_inf: 2
+decr_ratio: 0.8
+dev_set: ./data/examples_dataset/valid
+do_dec: True
+do_lower_case: True
+do_test: True
+do_train: True
+do_val: False
+encoder_json_file: roberta_config/encoder.json
+epoch: 5
+eps: 1e-08
+ernie_config_path: ernie_config/ernie_config.json
+ernie_vocab_file: ernie_config/vocab.txt
+evaluate_blue: False
+grad_norm: 2.0
+graph_type: similarity
+in_tokens: True
+incr_every_n_steps: 100
+incr_ratio: 2.0
+init_checkpoint: None
+init_loss_scaling: 12800.0
+init_pretraining_params: ./roberta_config/roberta.base
+is_distributed: True
+label_smooth_eps: 0.1
+learning_rate: 0.03
+len_penalty: 0.6
+log_file: log/roberta_graphsum.log
+lr_scheduler: noam_decay
+max_doc_num: 20
+max_out_len: 300
+max_para_len: 768
+max_para_num: 100
+max_seq_len: 512
+max_tgt_len: 300
+metrics: True
+min_out_len: 200
+model_name: multigraphsum
+num_iteration_per_drop_scope: 10
+pos_win: 2.0
+random_seed: 1
+report_orcale: False
+report_rouge: True
+roberta_config_path: roberta_config/roberta_config.json
+roberta_vocab_file: roberta_config/vocab.txt
+save_steps: 1000
+selected_sentence_num: 9
+skip_steps: 100
+stream_job: 
+test_set: ./data/examples_dataset/test
+train_set: ./data/examples_dataset/train
+use_cuda: True
+use_dynamic_loss_scaling: False
+use_fast_executor: True
+use_fp16: False
+use_interval: False
+use_multi_gpu_test: False
+validation_steps: 1000
+verbose: True
+vocab_bpe_file: roberta_config/vocab.bpe
+vocab_path: None
+warmup_proportion: 0.01
+warmup_steps: 10000
+weight_decay: 0.01
+weight_sharing: True
+------------------------------------------------
+attention_probs_dropout_prob: 0.1
+dec_graph_layers: 6
+dec_word_pos_embedding_name: dec_word_pos_embedding
+enc_graph_layers: 2
+enc_sen_pos_embedding_name: enc_sen_pos_embedding
+hidden_act: relu
+hidden_dropout_prob: 0.1
+initializer_range: 0.02
+postprocess_command: da
+preprocess_command: n
+word_embedding_name: word_embedding
+------------------------------------------------
+[2022-09-14 17:10:38,503 INFO] {'BOS': 0, 'EOS': 50264, 'PAD': 1, 'EOQ': 2}
+attention_probs_dropout_prob: 0.1
+hidden_act: gelu
+hidden_dropout_prob: 0.1
+hidden_size: 768
+initializer_range: 0.02
+max_position_embeddings: 770
+num_attention_heads: 12
+num_hidden_layers: 12
+sent_type_vocab_size: 0
+task_type_vocab_size: 0
+type_vocab_size: 0
+vocab_size: 50265
+------------------------------------------------
+[2022-09-14 17:10:38,734 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:10:38,740 INFO] Device count: 1, gpu_id: 0
+[2022-09-14 17:10:38,741 INFO] Num train examples: 98
+[2022-09-14 17:10:38,741 INFO] Max train steps: 32
+[2022-09-14 17:10:38,741 INFO] Num warmup steps: 10000
+[2022-09-14 17:10:38,741 WARNING] paddle.fluid.layers.py_reader() may be deprecated in the near future. Please use paddle.fluid.io.DataLoader.from_generator() instead.
+/usr/local/lib/python3.7/dist-packages/paddle/fluid/clip.py:779: UserWarning: Caution! 'set_gradient_clip' is not recommended and may be deprecated in future! We recommend a new strategy: set 'grad_clip' when initializing the 'optimizer'. This method can reduce the mistakes, please refer to documention of 'optimizer'.
+  warnings.warn("Caution! 'set_gradient_clip' is not recommended "
+[2022-09-14 17:10:42,529 WARNING] paddle.fluid.layers.py_reader() may be deprecated in the near future. Please use paddle.fluid.io.DataLoader.from_generator() instead.
+[2022-09-14 17:10:44,117 INFO] args.is_distributed: True
+[2022-09-14 17:10:44,118 INFO] worker_endpoints:['172.28.0.2:6170'] trainers_num:1 current_endpoint:172.28.0.2:6170               trainer_id:0
+
+
+API is deprecated since 2.0.0 Please use FleetAPI instead.
+WIKI: https://github.com/PaddlePaddle/Fleet/blob/develop/markdown_doc/transpiler
+
+        
+W0914 17:10:44.200273  1095 device_context.cc:252] Please NOTE: device: 0, CUDA Capability: 60, Driver API Version: 11.2, Runtime API Version: 10.0
+W0914 17:10:44.204372  1095 device_context.cc:260] device: 0, cuDNN Version: 7.6.
+d49202434e72:1095:1095 [0] NCCL INFO Bootstrap : Using eth0:172.28.0.2<0>
+d49202434e72:1095:1095 [0] NCCL INFO NET/Plugin : No plugin found (libnccl-net.so), using internal implementation
+d49202434e72:1095:1095 [0] NCCL INFO NET/IB : No device found.
+d49202434e72:1095:1095 [0] NCCL INFO NET/Socket : Using [0]eth0:172.28.0.2<0>
+d49202434e72:1095:1095 [0] NCCL INFO Using network Socket
+Load pretraining parameters from ./roberta_config/roberta.base.
+Following params not existed in the params file:
+['roberta_graph_encoder_layer_0_pre_attn_layer_norm_scale', 'roberta_graph_encoder_layer_0_pre_attn_layer_norm_bias', 'roberta_graph_encoder_layer_0_graph_attn_query_fc.w_0', 'roberta_graph_encoder_layer_0_graph_attn_query_fc.b_0', 'roberta_graph_encoder_layer_0_graph_attn_key_fc.w_0', 'roberta_graph_encoder_layer_0_graph_attn_key_fc.b_0', 'roberta_graph_encoder_layer_0_graph_attn_value_fc.w_0', 'roberta_graph_encoder_layer_0_graph_attn_value_fc.b_0', 'roberta_graph_encoder_layer_0_graph_attn_output_fc.w_0', 'roberta_graph_encoder_layer_0_graph_attn_output_fc.b_0', 'roberta_graph_encoder_layer_0_pre_ffn_layer_norm_scale', 'roberta_graph_encoder_layer_0_pre_ffn_layer_norm_bias', 'roberta_graph_encoder_layer_0_ffn_fc_0.w_0', 'roberta_graph_encoder_layer_0_ffn_fc_0.b_0', 'roberta_graph_encoder_layer_0_ffn_fc_1.w_0', 'roberta_graph_encoder_layer_0_ffn_fc_1.b_0', 'roberta_graph_encoder_layer_1_pre_attn_layer_norm_scale', 'roberta_graph_encoder_layer_1_pre_attn_layer_norm_bias', 'roberta_graph_encoder_layer_1_graph_attn_query_fc.w_0', 'roberta_graph_encoder_layer_1_graph_attn_query_fc.b_0', 'roberta_graph_encoder_layer_1_graph_attn_key_fc.w_0', 'roberta_graph_encoder_layer_1_graph_attn_key_fc.b_0', 'roberta_graph_encoder_layer_1_graph_attn_value_fc.w_0', 'roberta_graph_encoder_layer_1_graph_attn_value_fc.b_0', 'roberta_graph_encoder_layer_1_graph_attn_output_fc.w_0', 'roberta_graph_encoder_layer_1_graph_attn_output_fc.b_0', 'roberta_graph_encoder_layer_1_pre_ffn_layer_norm_scale', 'roberta_graph_encoder_layer_1_pre_ffn_layer_norm_bias', 'roberta_graph_encoder_layer_1_ffn_fc_0.w_0', 'roberta_graph_encoder_layer_1_ffn_fc_0.b_0', 'roberta_graph_encoder_layer_1_ffn_fc_1.w_0', 'roberta_graph_encoder_layer_1_ffn_fc_1.b_0', 'roberta_graph_encoder_post_layer_norm_scale', 'roberta_graph_encoder_post_layer_norm_bias', 'doc_att_pooling_pre_layer_norm_scale', 'doc_att_pooling_pre_layer_norm_bias', 'doc_att_pooling_key_fc.w_0', 'doc_att_pooling_key_fc.b_0', 'doc_att_pooling_value_fc.w_0', 'doc_att_pooling_value_fc.b_0', 'doc_att_pooling_output_fc.w_0', 'doc_att_pooling_output_fc.b_0', 'sent_score_fc.w', 'sent_score_fc.bias']
+[2022-09-14 17:10:47,636 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:10:58,289 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:11:33,397 INFO] train pyreader queue size: 50, learning rate: 0.000000
+[2022-09-14 17:11:33,397 INFO] epoch: 1, progress: 94/98, step: 100, loss: 20.068390, sentence loss: 19.794073, summary loss: 0.274315, learning rate: 0.00000011, speed: 4.146604 docs/s
+[2022-09-14 17:11:34,803 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:12:09,741 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:12:19,436 INFO] train pyreader queue size: 50, learning rate: 0.000000
+[2022-09-14 17:12:19,437 INFO] epoch: 3, progress: 25/98, step: 200, loss: 20.754238, sentence loss: 20.497519, summary loss: 0.256717, learning rate: 0.00000022, speed: 6.928842 docs/s
+[2022-09-14 17:12:47,316 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:13:08,229 INFO] train pyreader queue size: 50, learning rate: 0.000000
+[2022-09-14 17:13:08,229 INFO] epoch: 4, progress: 59/98, step: 300, loss: 9.638759, sentence loss: 9.350316, summary loss: 0.288441, learning rate: 0.00000032, speed: 9.243274 docs/s
+[2022-09-14 17:13:59,697 INFO] Loading dataset from ./data/examples_dataset/test/test.0.json, number of examples: 98
+[2022-09-14 17:13:59,698 INFO] Final test result:
+[2022-09-14 17:13:59,913 INFO] {'BOS': 0, 'EOS': 50264, 'PAD': 1, 'EOQ': 2}
+[2022-09-14 17:14:15,682 INFO] candidata path: ./roberta_results/test_final_preds.candidate
+/usr/local/lib/python3.7/dist-packages/numpy/core/fromnumeric.py:3335: RuntimeWarning: Mean of empty slice.
+  out=out, **kwargs)
+/usr/local/lib/python3.7/dist-packages/numpy/core/_methods.py:161: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
++ PRED=/content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/roberta_results/test_final_preds.candidate
++ PREFIX=/content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/roberta_results/test_final_preds.gold
+++ pwd
++ python pyrouge_set_rouge_path.py /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/
+2022-09-14 17:14:15,855 [MainThread  ] [INFO ]  Set ROUGE home directory to /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/.
++ python cnndm/eval.py --pred /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/roberta_results/test_final_preds.candidate --gold /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/roberta_results/test_final_preds.gold --trunc_len 250 --perl
+09/14/2022 17:14:16 - INFO - __main__ -   ***** Evaluation: /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/roberta_results/test_final_preds.candidate *****
+09/14/2022 17:14:16 - INFO - __main__ -   ***** Evaluation: /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/roberta_results/test_final_preds.gold *****
+2022-09-14 17:14:16,183 [MainThread  ] [INFO ]  Writing summaries.
+09/14/2022 17:14:16 - INFO - global -   Writing summaries.
+2022-09-14 17:14:16,183 [MainThread  ] [INFO ]  Processing summaries. Saving system files to /tmp/tmpltjizf8e/tmpi2t1tvea/system and model files to /tmp/tmpltjizf8e/tmpi2t1tvea/model.
+09/14/2022 17:14:16 - INFO - global -   Processing summaries. Saving system files to /tmp/tmpltjizf8e/tmpi2t1tvea/system and model files to /tmp/tmpltjizf8e/tmpi2t1tvea/model.
+2022-09-14 17:14:16,184 [MainThread  ] [INFO ]  Processing files in /tmp/tmpltjizf8e/rouge-tmp-2022-09-14-17-14-16/candidate/.
+09/14/2022 17:14:16 - INFO - global -   Processing files in /tmp/tmpltjizf8e/rouge-tmp-2022-09-14-17-14-16/candidate/.
+2022-09-14 17:14:16,194 [MainThread  ] [INFO ]  Saved processed files to /tmp/tmpltjizf8e/tmpi2t1tvea/system.
+09/14/2022 17:14:16 - INFO - global -   Saved processed files to /tmp/tmpltjizf8e/tmpi2t1tvea/system.
+2022-09-14 17:14:16,194 [MainThread  ] [INFO ]  Processing files in /tmp/tmpltjizf8e/rouge-tmp-2022-09-14-17-14-16/reference/.
+09/14/2022 17:14:16 - INFO - global -   Processing files in /tmp/tmpltjizf8e/rouge-tmp-2022-09-14-17-14-16/reference/.
+2022-09-14 17:14:16,204 [MainThread  ] [INFO ]  Saved processed files to /tmp/tmpltjizf8e/tmpi2t1tvea/model.
+09/14/2022 17:14:16 - INFO - global -   Saved processed files to /tmp/tmpltjizf8e/tmpi2t1tvea/model.
+2022-09-14 17:14:16,205 [MainThread  ] [INFO ]  Written ROUGE configuration to /tmp/tmpltjizf8e/tmpqxynqtef/rouge_conf.xml
+09/14/2022 17:14:16 - INFO - global -   Written ROUGE configuration to /tmp/tmpltjizf8e/tmpqxynqtef/rouge_conf.xml
+2022-09-14 17:14:16,206 [MainThread  ] [INFO ]  Running ROUGE with command /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/ROUGE-1.5.5.pl -e /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/data -c 95 -m -r 1000 -n 2 -a /tmp/tmpltjizf8e/tmpqxynqtef/rouge_conf.xml
+09/14/2022 17:14:16 - INFO - global -   Running ROUGE with command /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/ROUGE-1.5.5.pl -e /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/data -c 95 -m -r 1000 -n 2 -a /tmp/tmpltjizf8e/tmpqxynqtef/rouge_conf.xml
+Can't locate XML/Parser.pm in @INC (you may need to install the XML::Parser module) (@INC contains: /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/XML/DOM.pm line 41.
+BEGIN failed--compilation aborted at /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/XML/DOM.pm line 70.
+Compilation failed in require at /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/ROUGE-1.5.5.pl line 177.
+BEGIN failed--compilation aborted at /content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/ROUGE-1.5.5.pl line 177.
+Traceback (most recent call last):
+  File "cnndm/eval.py", line 371, in <module>
+    main()
+  File "cnndm/eval.py", line 329, in main
+    r1, r2 = process_eval(ins)
+  File "cnndm/eval.py", line 286, in process_eval
+    scores = test_rouge(pred_list, gold_list)
+  File "cnndm/eval.py", line 88, in test_rouge
+    rouge_results = r.convert_and_evaluate()
+  File "/content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/cnndm/../cnndm/bs_pyrouge.py", line 398, in convert_and_evaluate
+    rouge_output = self.evaluate(system_id, rouge_args)
+  File "/content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/cnndm/../cnndm/bs_pyrouge.py", line 373, in evaluate
+    rouge_output = check_output(command).decode("UTF-8")
+  File "/usr/lib/python3.7/subprocess.py", line 411, in check_output
+    **kwargs).stdout
+  File "/usr/lib/python3.7/subprocess.py", line 512, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/ROUGE-1.5.5.pl', '-e', '/content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/tasks/cnndm/file2rouge/data', '-c', '95', '-m', '-r', '1000', '-n', '2', '-a', '/tmp/tmpltjizf8e/tmpqxynqtef/rouge_conf.xml']' returned non-zero exit status 2.
+Traceback (most recent call last):
+  File "./src/run_roberta.py", line 37, in <module>
+    run_multigraphsum(args)
+  File "/content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/networks/roberta_multigraphextsum/run_graphsum.py", line 426, in main
+    decode_path=args.decode_path + "/test_final_preds")
+  File "/content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/networks/roberta_multigraphextsum/run_graphsum.py", line 687, in evaluate_test
+    eval_result = evaluator.eval(can_path, gold_path)
+  File "/content/gdrive/MyDrive/KLTN/EMNLP2021-SgSum/src/eval/gen_eval.py", line 49, in eval
+    eval_res = json.loads(eval_res)
+  File "/usr/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

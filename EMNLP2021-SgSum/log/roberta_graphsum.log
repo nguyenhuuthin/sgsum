@@ -1,0 +1,25 @@
+[2022-09-14 17:10:38,503 INFO] {'BOS': 0, 'EOS': 50264, 'PAD': 1, 'EOQ': 2}
+[2022-09-14 17:10:38,734 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:10:38,740 INFO] Device count: 1, gpu_id: 0
+[2022-09-14 17:10:38,741 INFO] Num train examples: 98
+[2022-09-14 17:10:38,741 INFO] Max train steps: 32
+[2022-09-14 17:10:38,741 INFO] Num warmup steps: 10000
+[2022-09-14 17:10:38,741 WARNING] paddle.fluid.layers.py_reader() may be deprecated in the near future. Please use paddle.fluid.io.DataLoader.from_generator() instead.
+[2022-09-14 17:10:42,529 WARNING] paddle.fluid.layers.py_reader() may be deprecated in the near future. Please use paddle.fluid.io.DataLoader.from_generator() instead.
+[2022-09-14 17:10:44,117 INFO] args.is_distributed: True
+[2022-09-14 17:10:44,118 INFO] worker_endpoints:['172.28.0.2:6170'] trainers_num:1 current_endpoint:172.28.0.2:6170               trainer_id:0
+[2022-09-14 17:10:47,636 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:10:58,289 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:11:33,397 INFO] train pyreader queue size: 50, learning rate: 0.000000
+[2022-09-14 17:11:33,397 INFO] epoch: 1, progress: 94/98, step: 100, loss: 20.068390, sentence loss: 19.794073, summary loss: 0.274315, learning rate: 0.00000011, speed: 4.146604 docs/s
+[2022-09-14 17:11:34,803 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:12:09,741 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:12:19,436 INFO] train pyreader queue size: 50, learning rate: 0.000000
+[2022-09-14 17:12:19,437 INFO] epoch: 3, progress: 25/98, step: 200, loss: 20.754238, sentence loss: 20.497519, summary loss: 0.256717, learning rate: 0.00000022, speed: 6.928842 docs/s
+[2022-09-14 17:12:47,316 INFO] Loading dataset from ./data/examples_dataset/train/train.0.json, number of examples: 98
+[2022-09-14 17:13:08,229 INFO] train pyreader queue size: 50, learning rate: 0.000000
+[2022-09-14 17:13:08,229 INFO] epoch: 4, progress: 59/98, step: 300, loss: 9.638759, sentence loss: 9.350316, summary loss: 0.288441, learning rate: 0.00000032, speed: 9.243274 docs/s
+[2022-09-14 17:13:59,697 INFO] Loading dataset from ./data/examples_dataset/test/test.0.json, number of examples: 98
+[2022-09-14 17:13:59,698 INFO] Final test result:
+[2022-09-14 17:13:59,913 INFO] {'BOS': 0, 'EOS': 50264, 'PAD': 1, 'EOQ': 2}
+[2022-09-14 17:14:15,682 INFO] candidata path: ./roberta_results/test_final_preds.candidate
